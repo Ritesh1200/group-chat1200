@@ -18,10 +18,10 @@ app.use(bodyparser.urlencoded({extended:false})) ;
 app.use(bodyparser.json()) ;
 
 // cors
-// app.use(cors({
-//    origin : ['http://localhost:3000'],
-//    credentials:true
-//  }) ) ;
+app.use(cors({
+   origin : ['http://localhost:3000'],
+   credentials:true
+ }) ) ;
 
 var url = 'mongodb+srv://demo:1234@cluster0.ugnnu.mongodb.net/chattingApp?retryWrites=true&w=majority' ;
 mongoose.connect(
@@ -30,11 +30,6 @@ mongoose.connect(
   function() {
     console.log ('connected to mongoDB') ;
   });
-
-app.use(express.static(path.join(__dirname,'../build')));
-app.use(function(req, res) {
-	res.sendFile(path.join(__dirname, '../build/index.html'));
-});
 
 app.post('/create' , (req,res,next)=>{
    schema.find({room: req.body.room} , function(err , room){
@@ -84,6 +79,10 @@ io.on('connection' , (socket)=>{  //Creating Connection
    })
 })
 
+app.use(express.static(path.join(__dirname,'../build')));
+app.use(function(req, res) {
+	res.sendFile(path.join(__dirname, '../build/index.html'));
+});
 
 server.listen(port, () => {
    console.log('express is running in 4000 port');

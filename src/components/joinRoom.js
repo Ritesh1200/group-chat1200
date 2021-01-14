@@ -18,7 +18,7 @@ class Join extends React.Component {
              document.getElementById('err').innerHTML= 'Enter details'
         }
         else{
-            fetch('https://group-chat1200.herokuapp.com/check', {
+            fetch('/check', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json; charset=utf-8",
