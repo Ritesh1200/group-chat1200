@@ -1,0 +1,16 @@
+#back {
+   background-image: url('../assets/website.jpg'); 
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   height: 100vh;
+   object-fit: cover
+}
+.center {
+   margin: 0 auto;  /* this place horizentally center */
+   align-self: center; 
+   height: 50vh;
+   display: flex;
+   top: 150px
+   /* align-items: center;     this convert vertically center*/ 
+} 
