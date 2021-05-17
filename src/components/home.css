@@ -3,6 +3,7 @@
    background-position: center;
    background-size: cover;
    background-repeat: no-repeat;
+   overflow: hidden;
    height: 100vh;
    object-fit: cover
 }
